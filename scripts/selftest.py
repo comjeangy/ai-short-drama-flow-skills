@@ -118,8 +118,8 @@ def run_prompt_checks(root: pathlib.Path, extra_dirs: list[str]) -> tuple[int, i
             skipped += 1
             continue
         prompt = max(blocks, key=len).strip()
-        # 실제 프롬프트 블록만 (9:16 명시가 우리 관례)
-        if len(prompt) < 200 or "9:16" not in prompt:
+        # 실제 프롬프트 블록만 (비율 명시가 우리 관례 — 9:16 영상 / 16:9 시트)
+        if len(prompt) < 200 or not re.search(r"\d+\s*:\s*\d+", prompt):
             skipped += 1
             continue
         r = subprocess.run([sys.executable, str(checker), "--text", prompt, "--quiet"],
