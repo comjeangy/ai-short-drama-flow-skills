@@ -109,11 +109,17 @@ def check(prompt: str, raw: str, kind: str) -> list[tuple[str, str, str]]:
         else:
             r.append(("WARN" if warn else "FAIL", item, msg_bad))
 
-    # 공통 1) 비율
-    ratio = bool(re.search(r"9:16|vertical", low))
-    add(ratio, "비율 명시",
-        "9:16/vertical 있음",
-        "9:16(또는 vertical) 이 없다 → 기본 16:9 로 나간다. 숏폼은 세로다")
+    # 1) 비율 — 영상·키프레임은 세로 필수, 시트·콘티는 비율을 명시하면 된다
+    if kind in ("scene", "keyframe"):
+        ratio = bool(re.search(r"9:16|vertical", low))
+        add(ratio, "비율: 세로 필수",
+            "9:16/vertical 있음",
+            "9:16(또는 vertical) 이 없다 → 기본 16:9 로 나간다. 숏폼 영상은 세로다")
+    else:
+        ratio = bool(re.search(r"\d+\s*:\s*\d+|vertical|horizontal|portrait|landscape|square", low))
+        add(ratio, "비율 명시",
+            "비율이 명시됨",
+            "비율(9:16 / 16:9 등)이 없다 → UI 비율이 안 먹으면 엉뚱한 비율로 나온다")
 
     # 공통 2) 화면 글자 금지
     add(bool(re.search(r"no text|no letters|no captions|no watermark|글자 없음|자막 없음", low)),
@@ -193,7 +199,7 @@ def report(label: str, res: list[tuple[str, str, str]], quiet=False) -> bool:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("path", nargs="?")
+    ap.add_argument("path", nargs="*", help="프롬프트 파일 또는 폴더 (여러 개 가능)")
     ap.add_argument("--text")
     ap.add_argument("--type", choices=list(TYPES) + ["auto"], default="auto")
     ap.add_argument("--quiet", action="store_true")
@@ -204,16 +210,18 @@ def main() -> None:
     if a.text:
         targets.append(("(--text)", a.text, a.text))
     elif a.path:
-        p = pathlib.Path(a.path)
-        if p.is_dir():
-            for f in sorted(p.rglob(a.suffix)):
-                pr, raw = load(f)
-                targets.append((str(f), pr, raw))
-            if not targets:
-                print(f"검사할 파일이 없습니다: {p}"); sys.exit(1)
-        else:
-            pr, raw = load(p)
-            targets.append((str(p), pr, raw))
+        for item in a.path:
+            q = pathlib.Path(item)
+            if q.is_dir():
+                for f in sorted(q.rglob(a.suffix)):
+                    pr, raw = load(f)
+                    targets.append((str(f), pr, raw))
+            else:
+                pr, raw = load(q)
+                targets.append((str(q), pr, raw))
+        if not targets:
+            print(f"검사할 파일이 없습니다: {' '.join(a.path)}")
+            sys.exit(1)
     else:
         ap.error("path 또는 --text 가 필요합니다")
 

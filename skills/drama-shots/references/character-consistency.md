@@ -34,20 +34,36 @@ P2에 "성격이 밝은"을 써도 **표정은 바뀌지 않는다.**
 ### 시트 1장 구성
 
 ```
-정면 · 3/4 · 측면 · 후면  (전신, 같은 크기로 나란히)
+가로 16:9 원칙
+정면 · 3/4 · 측면 · 후면  (전신, 같은 크기로 한 줄에 나란히)
 + 얼굴 클로즈업 1컷
 같은 옷 / 같은 머리 / 단색 밝은 회색 배경 / 화면에 글자 없음
 ```
 
+> **가로(16:9)가 원칙인 이유**: 4뷰가 한 줄로 서려면 **폭**이 필요하다.
+> 세로(9:16)로 나오면 뷰가 작아져 **뒷판·소매·신발이 뭉개져** 시트의 목적 자체가 사라진다.
+> 세로만 나오는 환경이면 **2×2 배치**(위: 정면·3/4, 아래: 측면·후면, 구석에 얼굴)로 지시한다.
+
+### 🔴 비율 실측 (2026-09-30 — 9월 29일 기록을 정정)
+
+| 날짜 | 결과 |
+|---|---|
+| 2026-09-29 | `16:9` 클릭 → **반영되지 않고 9:16 생성** |
+| 2026-09-30 | **비율 칩을 `16:9` 로 바꾼 뒤 생성 → 9:16 아닌 16:9 로 생성됨** ✅ |
+
+**원칙**: 비율 **칩이 실제 값을 표시**한다. **생성 전에 칩을 눈으로 확인**한다.
+확인 없이 생성하면 "왜 세로로 나오지"를 반복한다. 세로로 나온 시트는 **폐기**하고 가로로 다시 뽑는다(0크레딧).
+
 ### P2 조립 공식 (v3 — 시트 기준)
 
 ```
+Horizontal 16:9 image.
 {나이대/성별/국적}: {헤어}, {상의(무늬까지)}, {하의·신발}, {액세서리}, {얼굴 특징}
 
-One single image: front view, three-quarter view, side profile and back view standing side by side
-at the same scale, plus one face close-up.
+One wide single image: front view, three-quarter view, side profile and back view standing side by side
+in one row at the same scale across the width of the frame, plus one face close-up at the right edge.
 
-Full body head to toe in the front, three-quarter, side and back views.
+Full body head to toe in all four views.
 Identical {옷}, identical {머리}, identical {소품} in every view.
 Neutral pose, arms relaxed at the sides, {표정}.
 Plain flat light grey seamless studio background, even soft light, realistic photography.
