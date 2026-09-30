@@ -24,7 +24,7 @@ metadata:
 실측(2026-09-29): 이미지 모델 `Nano Banana Pro / 2 / 2 Lite` **3종 모두 0크레딧 · 승인 창 없음.**
 몇 번을 다시 뽑아도 0원이다. **마음에 들 때까지 다시 만든다.**
 
-**AI가 반드시 읽을 것**: `references/drama-craft.md` (§5 세계관·미장센, §4 고정항목+금지변화) + `references/prompt-recipes.md` (§2 P2/P3 분리, **§2-b 뷰 시트 템플릿**, **§2-c 편집 파생**)
+**AI가 반드시 읽을 것**: `references/drama-craft.md` (§5 세계관·미장센, §4 고정항목+금지변화) + `references/character-consistency.md` (§2 P2/P3 분리, **§3 4뷰 시트 템플릿**, **§4 편집 파생**, §5 장소 시트) + `references/lighting-and-style.md` (§4 색과 대비)
 
 ---
 
@@ -90,7 +90,7 @@ AI가 물어볼 것 — **하나씩.**
 같은 옷 / 같은 머리 / 단색 밝은 회색 배경 / 화면에 글자 없음
 ```
 
-템플릿은 `references/prompt-recipes.md` **§2-b** — 그대로 복사해 쓴다.
+템플릿은 `references/character-consistency.md` **§3 (4뷰 시트)** — 그대로 복사해 쓴다.
 
 ### 공식 4개 (v1 → v3 수정)
 
@@ -169,7 +169,7 @@ AI가 물어볼 것 — **하나씩.**
 | ✅ **파생** | 시트를 연 편집기 → **`어떤 내용을 변경하시나요?`** → `옷만 바꿔줘 … 나머지는 그대로 유지` |
 | ❌ 새로 생성 | 얼굴·주름·체형이 달라진다 (실측) |
 
-**규칙** (`prompt-recipes.md §9` P6과 같다)
+**규칙** (`references/character-consistency.md` §4 편집 파생)
 1. **한 번에 변수 하나** — 옷만
 2. **`나머지는 그대로 유지해`** 를 반드시 붙인다 (얼굴·머리·자세·4뷰 배치·배경·조명)
 3. **4턴을 넘기지 않는다**
@@ -247,8 +247,13 @@ AI가 물어볼 것 — **하나씩.**
 
 ## 참조 파일
 
+- `references/prompt-recipes.md` — **색인**
+- `references/character-consistency.md` — **4뷰 시트 템플릿 · 편집 파생 · 장소 시트 · 참조 붙이기**
+- `references/lighting-and-style.md` — 스타일 전역 문장·시간대 빛·색과 대비
+- `references/prompt-anatomy.md` — 5부 구조·금지 세트
 - `references/drama-craft.md` — 세계관·미장센 자산, 고정항목+금지변화
-- `references/prompt-recipes.md` — **§2-b 뷰 시트 템플릿, §2-c 편집 파생**, P2/P3 분리
+- `references/failure-atlas.md` — 옷·얼굴이 흔들릴 때의 처방
 - `references/flow-paste.md` — 붙여넣기 위치·이름 붙이기·소재 붙이기 (부록)
 - `references/cost-and-safety.md` — 이미지가 0크레딧인 이유, 승인 창
+- `assets/` — 캐릭터 시트·장소 시트 양식
 - `references/figures/` — 뷰 시트·편집 파생 화면

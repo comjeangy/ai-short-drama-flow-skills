@@ -23,7 +23,7 @@ metadata:
 
 `💰 0 크레딧` — 이 차시는 Flow를 켜지 않는다. **AI와 대화만 한다.**
 
-**AI가 반드시 읽을 것**: `references/drama-craft.md` (§1 뼈대, §2 개막, §3 압축, §7 대화 규칙)
+**AI가 반드시 읽을 것**: `references/drama-craft.md` (§1 뼈대, §2 개막, §3 압축, §7 대화 규칙) + `references/prompt-anatomy.md` (§2 5부 공식, §6 금지 세트) + `references/character-consistency.md` (§3 4뷰 시트)
 
 ---
 
@@ -140,7 +140,11 @@ metadata:
 
 ## 참조 파일
 
+- `references/prompt-recipes.md` — **색인** (어떤 문서를 언제 읽는가)
 - `references/drama-craft.md` — **드라마 설계 방법론** (3비트·개막 공식·압축·대화 규칙)
-- `references/prompt-recipes.md` — 프롬프트 작성 규칙 (P2/P3 분리)
+- `references/prompt-anatomy.md` — 5부 구조·타임코드·금지 세트·출력 형식
+- `references/character-consistency.md` — 4뷰 시트·편집 파생 (2차시에서 쓴다)
+- `references/failure-atlas.md` — 증상 → 원인 → 처방
 - `references/flow-paste.md` — 어디에 붙여넣는가 (부록)
 - `references/cost-and-safety.md` — 크레딧·승인 창
+- `assets/` — 기획 카드 등 양식 7종

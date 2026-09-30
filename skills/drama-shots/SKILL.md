@@ -22,7 +22,7 @@ metadata:
 
 `💰 이미지 단계는 0크레딧` · `💰💰 영상에서 처음 돈이 나간다`
 
-**AI가 반드시 읽을 것**: `references/prompt-recipes.md` (§1-b 콘티, §1-c 키프레임, §1 5부 공식, §3 타임코드, §4 샷 잠금, §6 한국어 대사, §7 금지 세트)
+**AI가 반드시 읽을 것**: `references/conti-and-keyframe.md` (**§2 콘티 규칙, §4 키프레임, §5 시작 프레임 장면**) + `references/prompt-anatomy.md` (5부 공식·타임코드·샷 잠금·금지 세트) + `references/shot-grammar.md` (샷 크기·무빙·비트) + `references/korean-dialogue.md` (대사 문형·억양)
 
 ---
 
@@ -74,7 +74,7 @@ AI가 물어볼 것 — **하나씩.**
 
 ![콘티 4패널](references/figures/fig-3d-conti.png)
 
-**콘티 프롬프트 규칙** (`prompt-recipes.md §1-b`)
+**콘티 프롬프트 규칙** (`references/conti-and-keyframe.md` §2)
 1. 첫 줄에 **`GENERATE THE STORYBOARD IMAGE NOW.`** — 설명·계획을 쓰지 못하게 막는다
 2. **패널 수와 배열을 명시**한다 (`exactly 4 panels in one 2x2 storyboard contact sheet`)
 3. **패널마다 행동을 하나씩** 지시한다 (P1…P4)
@@ -101,7 +101,7 @@ AI가 물어볼 것 — **하나씩.**
 → 승인된 **첫 패널(0초 상태)** 을 **단일 스틸 1장**으로 다시 뽑는다. 역시 이미지 모드 · 0크레딧.
 → 이 스틸을 **시작 프레임**으로 넣으면 **첫 구도·배경·의상이 영상까지 그대로 따라온다.**
 
-템플릿은 `prompt-recipes.md §1-c`. (콘티 프롬프트에서 `4패널` 문장만 빼고 `Single cinematic still frame`으로 바꾼 형태)
+템플릿은 `references/conti-and-keyframe.md` §4. (콘티 프롬프트에서 `4패널` 문장만 빼고 `Single cinematic still frame`으로 바꾼 형태)
 
 ---
 
@@ -251,8 +251,17 @@ AI가 물어볼 것 — **하나씩.**
 
 ## 참조 파일
 
-- `references/prompt-recipes.md` — **§1-b 콘티, §1-c 키프레임**, 5부 공식·타임코드·샷 잠금·한국어 대사·금지 세트
+- `references/prompt-recipes.md` — **색인**
+- `references/conti-and-keyframe.md` — **콘티 4패널 템플릿 · 키프레임 · 프레임→시작**
+- `references/prompt-anatomy.md` — 5부 공식·타임코드·샷 잠금·금지 세트·출력 형식
+- `references/shot-grammar.md` — 샷 크기·앵글·무빙·10초 비트·표정 어휘
+- `references/lighting-and-style.md` — 스타일 전역·조명
+- `references/character-consistency.md` — 참조 붙이기·일관성 실패 처방
+- `references/korean-dialogue.md` — 대사 문형·억양·ASR 검증
+- `references/editing-and-revision.md` — 4턴 규칙 (4차시)
+- `references/failure-atlas.md` — **증상 → 원인 → 처방**
 - `references/drama-craft.md` — 3비트 뼈대
 - `references/flow-paste.md` — 소재 붙이기·프레임·설정 경로
 - `references/cost-and-safety.md` — 단가표·확인 절차·승인 창
+- `assets/` — 콘티 패널·샷·렌더 로그 양식
 - `references/figures/` — 콘티·설정 화면

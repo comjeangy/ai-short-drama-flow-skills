@@ -1,0 +1,4 @@
+{"shot":"s01/sh01","stage":"sheet","date":"2026-09-29","model":"Nano Banana 2 Lite","credit":0,"verdict":"승인","checks":{"4뷰":true,"얼굴동일":true,"의상동일":true,"화면텍스트없음":true},"note":"미영·만복·순자 3장 각각 승인. 2벌(정장)은 편집 파생으로."}
+{"shot":"s01/clipA","stage":"conti","date":"2026-09-29","model":"Nano Banana 2 Lite","credit":0,"verdict":"승인","checks":{"패널수":4,"일관":true,"화면텍스트없음":true,"단서":true},"note":"P4에 빨간 컨버터블. 콘택트시트는 영상 입력 불가 → 키프레임 별도."}
+{"shot":"s01/sh01","stage":"keyframe","date":"2026-09-29","model":"Nano Banana Pro","credit":0,"verdict":"승인","checks":{"구도":true,"의상동일":true,"배경동일":true},"note":"프레임→시작 슬롯에 넣을 단일 스틸."}
+{"shot":"s01/sh01b","stage":"scene","date":"2026-09-29","model":"Omni 1.1 Flash","credit":7,"verdict":"대기","checks":{},"note":"360p 10초. 승인 창에서 7 크레딧 확인 후 생성. 실험: 캐릭터 등록 안 함 vs 등록."}

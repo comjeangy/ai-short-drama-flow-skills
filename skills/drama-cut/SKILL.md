@@ -23,7 +23,7 @@ metadata:
 `💰💰 수정도 영상과 같은 단가다` — **생성 전에 프롬프트바의 `생성 시 N크레딧` 을 읽는다.**
 (참고치: 10초 기준 360p **7** / 720p **15**) **다운로드·저장은 무료다.**
 
-**AI가 반드시 읽을 것**: `references/prompt-recipes.md` (§9 편집 프롬프트, §10 실패 유형 표) + `references/drama-craft.md` (§6 검수·고난도 표기)
+**AI가 반드시 읽을 것**: `references/editing-and-revision.md` (**§1 4턴 규칙, §3 자주 쓰는 편집, §5 판정**) + `references/failure-atlas.md` (**§1~4 단계별 처방, §5 진단 순서**) + `references/drama-craft.md` (§6 검수·고난도 표기)
 
 ---
 
@@ -189,8 +189,14 @@ metadata:
 
 ## 참조 파일
 
-- `references/prompt-recipes.md` — **§9 편집 규칙, §10 실패 유형 → 처방 표**
+- `references/prompt-recipes.md` — **색인**
+- `references/editing-and-revision.md` — **4턴 규칙 · 좋은/나쁜 편집 지시 · 판정 항목**
+- `references/failure-atlas.md` — **증상 → 원인 → 처방** (단계별) + 진단 순서
+- `references/korean-dialogue.md` — 대사가 안 들릴 때의 폴백
+- `references/character-consistency.md` — 얼굴·옷이 바뀌었을 때
+- `references/prompt-anatomy.md` — 5부 구조·금지 세트
 - `references/drama-craft.md` — §6 검수 라운드·고난도 표기
 - `references/flow-paste.md` — 타일 메뉴·다운로드 (부록)
 - `references/cost-and-safety.md` — 비용 경계
+- `assets/` — 판정·렌더 로그 양식
 - `references/figures/` — 편집기·타일 메뉴
