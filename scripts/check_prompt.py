@@ -23,7 +23,7 @@ import re
 import sys
 
 HANGUL = re.compile(r"[가-힣]")
-COST_HINT = re.compile(r"(\d+)\s*크레딧|(\d+)\s*credit", re.I)
+COST_HINT = re.compile(r"(\d+)\s*크레딧|크레딧[^0-9\n]{0,14}(\d+)|(\d+)\s*credits?", re.I)
 
 # 장면(scene) 5부 구조
 PARTS = {
@@ -57,7 +57,7 @@ TYPES = {
             (r"NO TEXT IN THE IMAGE", "글자 금지 강조"),
             (r"panel\s*1", "패널별 행동"),
         ],
-        "extra": [(r"across all panels|consistent across", "패널 간 일관 지시")],
+        "extra": [(r"across all panels|across all four panels|consistent across|identical across", "패널 간 일관 지시")],
     },
     "keyframe": {
         "name": "키프레임 스틸",
@@ -170,9 +170,10 @@ def check(prompt: str, raw: str, kind: str) -> list[tuple[str, str, str]]:
         add(bool(re.search(r"no dialogue|no voiceover|무대사|대사 없음", low)), "대사 처리",
             "대사 없음 명시", "대사도 'no dialogue' 도 없다 → 없는 대사가 생길 수 있다")
 
-    # 길이
-    if len(prompt) > 2000:
-        r.append(("WARN", "길이", f"{len(prompt)}자 — 2,000자 이하 권장"))
+    # 길이 (콘티는 구조상 길어진다)
+    limit = 3200 if kind == "conti" else 2000
+    if len(prompt) > limit:
+        r.append(("WARN", "길이", f"{len(prompt)}자 — {limit:,}자 이하 권장"))
 
     # 메타 기록(프롬프트 파일)
     if raw != prompt:
