@@ -82,3 +82,33 @@ cold reflections off grey concrete and stainless steel, murky teal shadows, shal
 
 **전역 문장을 바꾸면 앞뒤 컷이 다 튄다.** 한 편 안에서는 고정한다.
 다른 톤이 필요하면 그 **샷 하나만** 예외로 두고, 이유를 `judgement.jsonl` 메모에 남긴다.
+
+---
+
+## 7. 밤 · 비 — **한 색으로 통일하면 "AI 야경"이 된다** (실측 교정 2026-09-30)
+
+| | |
+|---|---|
+| ❌ 폐기 | `cold blue-teal street light with warm orange reflections … deep shadows` |
+| 결과 | **프레임 전체가 파란 색보정**되고 가로등마다 번짐(bloom)이 생겨 전형적인 "AI 야경"으로 읽힘 |
+| ✅ 처방 | **혼합 조명**으로 쓴다 |
+
+```
+Realistic Korean night street photograph, heavy rain: mixed lighting —
+warm sodium street lamps pooling orange light on the wet asphalt,
+a cool fluorescent spill from one shop window, neutral dark grey shadows,
+natural contrast, slight film grain, documentary look.
+No colour grading, no blue tint over the image, no glowing fog, no lens flare, no bloom.
+```
+
+### 원리 4개
+
+1. **밤은 색온도가 섞여야 진짜다** — 나트륨등 주황 · 형광등 흰색 · 중성 그림자.
+   한 색으로 통일하면(특히 청록) 보정 티가 난다.
+2. **"차갑게"는 그림자에만** — 광원은 따뜻하게, 그림자는 중성 회색. (`cold blue` 를 전역에 걸지 않는다)
+3. **번짐·안개·플레어는 AI 티의 주범** — 네거티브 필드가 없으니 문장으로 금지한다.
+4. **생활 디테일을 넣는다** — 쓰레기통 · 벤치 · 적재된 상자 · 에어컨 실외기 · 주차된 스쿠터.
+   "주인 있는 거리"가 되어 인공적인 느낌이 줄고, 장소가 **명확히 읽힌다**.
+
+> 판정 기준에 넣을 것: **"사진처럼 보이는가, 보정한 그림처럼 보이는가"**.
+> 전자는 승인, 후자는 폐기(0크레딧이므로 부담 없다).
