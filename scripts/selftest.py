@@ -113,7 +113,7 @@ def run_prompt_checks(root: pathlib.Path, extra_dirs: list[str]) -> tuple[int, i
     ok = fail = skipped = 0
     for d in targets:
         body = d.read_text(encoding="utf-8")
-        blocks = re.findall(r"```[a-z]*\n(.*?)```", body, re.S)
+        blocks = re.findall(r"^```[^\n]*\n(.*?)^```[ \t]*$", body, re.S | re.M)
         if not blocks:
             skipped += 1
             continue

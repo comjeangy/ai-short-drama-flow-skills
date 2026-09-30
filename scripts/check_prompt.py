@@ -83,7 +83,8 @@ IMAGE_TYPES = ("sheet", "conti", "keyframe")
 
 def load(path: pathlib.Path) -> tuple[str, str]:
     raw = path.read_text(encoding="utf-8")
-    blocks = re.findall(r"```([^`]*?)```", raw, re.S)
+    # 인라인 백틱(예: `동영상` 칩)이 있어도 안전하게 줄 단위 펜스로 추출한다
+    blocks = re.findall(r"^```[^\n]*\n(.*?)^```[ \t]*$", raw, re.S | re.M)
     return (max(blocks, key=len).strip() if blocks else raw), raw
 
 
