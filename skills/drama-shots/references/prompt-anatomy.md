@@ -104,6 +104,18 @@ No text overlay on screen.
 
 ### 🔴 한국어 제작에서 `화면에 글자 없음`은 타협 불가
 
+**`No lettering` 만으로는 부족하다** (실측 2026-09-30 · 야경 장소 시트):
+야경에서 모델은 **불 켜진 상가 간판**을 자연스럽게 넣는다. 글자를 금지해도 광원은 남는다.
+
+| | |
+|---|---|
+| ❌ | `No people. No lettering of any kind.` → **네온 상가 간판이 그대로 들어옴** |
+| ✅ | `No lettering and no illuminated signs: all shopfronts dark and unlit.` |
+| ✅ | 광원을 한정한다: `All light comes from the street lamps and the wet asphalt reflections.` |
+
+**원리**: 글자를 빼려면 **글자가 있는 물건(간판)을 빼야** 한다.
+빛나는 판을 남겨두면 거기에 글자가 그려진다. 발광 패널은 `matte, not backlit` 로 막는다.
+
 Omni의 "텍스트 렌더링" 강점은 **라틴 문자 기준**이다. 독립 검증에서 **CJK 렌더링이 붕괴**했다
 (히라가나 46자 중 11자만 읽힘, 한자는 획이 무너짐). **한글은 자모 조합이라 더 위험하다.**
 
