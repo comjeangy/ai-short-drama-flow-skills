@@ -114,6 +114,6 @@
 
 ## 7. 🔴 승인 창
 
-![승인 창](references/figures/fig-approve.png)
+![승인 창](figures/fig-approve.png)
 
 `승인`만 누른다. **`항상 승인`은 앞으로 묻지 않고 자동으로 차감한다.**

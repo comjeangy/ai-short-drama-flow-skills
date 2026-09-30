@@ -61,10 +61,15 @@ def check_skill(d: pathlib.Path) -> list[str]:
     if len(refs) < 5:
         bad.append(f"references 문서 {len(refs)}개 (5개 이상 필요)")
 
-    # 링크 유효성
-    for link in set(re.findall(r"references/([\w\-.]+\.(?:md|png))", txt)):
-        if not (d / "references" / link).exists():
-            bad.append(f"깨진 링크: references/{link}")
+    # 모든 문서의 상대 링크·이미지 유효성 (링크를 쓴 문서 위치 기준)
+    for md in sorted(d.rglob("*.md")):
+        body = md.read_text(encoding="utf-8")
+        for m in re.finditer(r"!?\[[^\]]*\]\(([^)\s]+)\)", body):
+            tgt = m.group(1).split("#")[0].strip()
+            if not tgt or tgt.startswith(("http://", "https://", "mailto:", "#", "..")):
+                continue
+            if not (md.parent / tgt).exists():
+                bad.append(f"깨진 링크 ({md.relative_to(d)}): {tgt}")
 
     adir = d / "assets"
     have = {p.name for p in adir.glob("*")} if adir.exists() else set()
